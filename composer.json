@@ -74,7 +74,7 @@
 		"php": "^8.1",
 		"typo3/cms-core": "^11.5||^12.4",
 		"digital-marketing-framework/typo3-distributor-core": "dev-main",
-		"digital-marketing-framework/distributor-pdf": "dev-main"
+		"digital-marketing-framework/distributor-pdf": "dev-feature/MFR-23-port-from-formrelay"
 	},
 	"require-dev": {
 		"nimut/testing-framework": "^6.0",
