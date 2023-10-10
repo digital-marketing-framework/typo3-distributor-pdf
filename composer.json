@@ -1,15 +1,14 @@
 {
     "name": "digital-marketing-framework/typo3-distributor-pdf",
-    "type": "typo3-cms-extension",
     "description": "Digital Marketing Framework - Distributor - Pdf",
     "license": "GPL-2.0+",
+    "type": "typo3-cms-extension",
     "keywords": [
         "TYPO3",
         "extension",
         "form",
         "pdf"
     ],
-    "homepage": "https://www.mediatis.de",
     "authors": [
         {
             "name": "Michael V\u00f6hringer",
@@ -32,7 +31,16 @@
             "role": "Developer"
         }
     ],
-    "minimum-stability": "dev",
+    "homepage": "https://www.mediatis.de",
+    "require": {
+        "php": "^8.1",
+        "digital-marketing-framework/distributor-pdf": "dev-feature/MFR-23-port-from-formrelay",
+        "digital-marketing-framework/typo3-distributor-core": "dev-main",
+        "typo3/cms-core": "^11.5 || ^12.4"
+    },
+    "require-dev": {
+        "mediatis/typo3-coding-standards": "dev-main"
+    },
     "repositories": [
         {
             "type": "vcs",
@@ -42,15 +50,7 @@
             ]
         }
     ],
-    "require": {
-        "php": "^8.1",
-        "typo3/cms-core": "^11.5||^12.4",
-        "digital-marketing-framework/typo3-distributor-core": "dev-main",
-        "digital-marketing-framework/distributor-pdf": "dev-feature/MFR-23-port-from-formrelay"
-    },
-    "require-dev": {
-        "mediatis/typo3-coding-standards": "dev-main"
-    },
+    "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
             "DigitalMarketingFramework\\Typo3\\Distributor\\Pdf\\": "Classes"
@@ -62,13 +62,19 @@
         }
     },
     "config": {
-        "vendor-dir": ".Build/vendor",
-        "bin-dir": ".Build/bin",
         "allow-plugins": {
             "typo3/cms-composer-installers": true,
             "typo3/class-alias-loader": true,
             "phpstan/extension-installer": true,
             "ergebnis/composer-normalize": true
+        },
+        "bin-dir": ".Build/bin",
+        "vendor-dir": ".Build/vendor"
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "digitalmarketingframework_distributor_pdf",
+            "web-dir": ".Build/Web"
         }
     },
     "scripts": {
@@ -168,12 +174,6 @@
             "rm phpstan.neon",
             "rm phpcs.xml"
         ]
-    },
-    "extra": {
-        "typo3/cms": {
-            "web-dir": ".Build/Web",
-            "extension-key": "digitalmarketingframework_distributor_pdf"
-        }
     },
     "scripts-descriptions": {
         "ci": "Runs all dynamic and static code checks.",
