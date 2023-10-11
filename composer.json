@@ -20,7 +20,7 @@
     "homepage": "https://www.mediatis.de",
     "require": {
         "php": "^8.1",
-        "digital-marketing-framework/distributor-pdf": "dev-feature/MFR-23-port-from-formrelay",
+        "digital-marketing-framework/distributor-pdf": "^1.0",
         "digital-marketing-framework/typo3-distributor-core": "dev-main",
         "typo3/cms-core": "^11.5 || ^12.4"
     },
